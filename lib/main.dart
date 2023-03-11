@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:agroconnect/screens/login.dart';
+import 'package:agroconnect/screens/signup.dart';
+import 'package:agroconnect/screens/consumer_dashboard.dart';
+import 'package:agroconnect/screens/supplier_dashboard.dart';
 
 void main() {
   runApp ( MaterialApp(
-    home: Home()
+    initialRoute: '/',
+    routes: {
+      '/': (context) => Login(),
+      '/signup': (context) => Signup(),
+      '/supply': (context) => Supplier(),
+      '/consummer': (context) => Consumer()
+
+    },
   ));
 
 }
