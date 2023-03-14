@@ -1,10 +1,18 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:agroconnect/custom/borderBox.dart';
 
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,6 +54,7 @@ class Login extends StatelessWidget {
                             ),
                             SizedBox(height: 30,),
                             TextFormField(
+                              controller: passwordController,
                               decoration:  InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(25.0),
