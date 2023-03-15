@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:agroconnect/screens/AuthScreens/login.dart';
 import 'package:agroconnect/screens/signup.dart';
 import 'package:agroconnect/screens/consumer_dashboard.dart';
 import 'package:agroconnect/screens/supplier_dashboard.dart';
@@ -20,22 +21,20 @@ void main() {
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
+  void main() => runApp(const MyApp());
+ 
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+ 
+ 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(" agroconnect @ 2023"),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        titleTextStyle: const TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.bold
-        ),
+    return const MaterialApp(
+      home: Scaffold(
+        body: Login(),
       ),
-      body: const Center(
-        child: Text(" test to see if i work please"),
-      ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-// to see the wireframe for each widget.
+ 
