@@ -8,3 +8,7 @@ Color black = const Color(0xff171717);
 Color lightgrey = const Color(0xfff5f5f5);
 Color lightwhite = const Color(0xfffff9e7);
 Color backgroundColor = const Color(0xfffafafa);
+Color cardColor = const Color(0xFFFF3D3D);
+
+
+
