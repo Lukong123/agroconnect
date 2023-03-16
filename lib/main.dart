@@ -5,6 +5,7 @@ import 'package:agroconnect/screens/signup.dart';
 import 'package:agroconnect/screens/consumer_dashboard.dart';
 import 'package:agroconnect/screens/supplier_dashboard.dart';
 
+
   void main() => runApp(const MyApp());
  
 class MyApp extends StatelessWidget {
@@ -21,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 
