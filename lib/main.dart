@@ -1,3 +1,4 @@
+import 'package:agroconnect/Screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:agroconnect/screens/AuthScreens/login.dart';
 import 'package:agroconnect/screens/signup.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Login(),
+        body: Dashboard(),
       ),
       debugShowCheckedModeBanner: false,
     );
