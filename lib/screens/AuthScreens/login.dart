@@ -1,6 +1,5 @@
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
-// import 'package:clean_city/Styles/colors.dart';
 
 
 import 'package:flutter/material.dart';
@@ -96,32 +95,30 @@ class _LoginState extends State<Login> {
                         ),
                         SizedBox(height: 20,),
                         Row(
-                                children: const <Widget>[
+                                children: <Widget>[
                                   SizedBox(
+                                    
                                     width: 1,
                                   ),
-                                  //  Checkbox(
-                                  //   value: this.checkvalue,
+                                   Checkbox(
+                                    value: this.checkvalue,
           
-                                  //   activeColor: Color(0xFF2D5746),
-                                  //   onChanged: (bool? value) {
-                                  //     setState(() {
-                                  //       this.checkvalue = value!;
-                                  //     });
-                                  //   },
-                                  // ),
+                                    activeColor: primaryColor,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        this.checkvalue = value!;
+                                      });
+                                    },
+                                  ),
                                   //SizedBox
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text(
-                                      'Create Account',
-                                      style: TextStyle(fontSize: 12.0),
-                                    ),
+                                  Text(
+                                    'keep me signed In',
+                                    style: TextStyle(fontSize: 12.0),
                                   ), //Text
-                                  SizedBox(width: 150), 
+                                  SizedBox(width: 100), 
                                   //SizedBox
                                   Text('Forgot Password?',
-                                  style: TextStyle(color: Color(0xFF0C4B18),
+                                  style: TextStyle(color: primaryColor,
                                   fontSize: 12.0, 
                                   ))
                                 ], //<Widget>[]
