@@ -71,24 +71,7 @@ class _RegisterState extends State<Register> {
                           ),
                         ),
 
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
-                          child: const Text('User Name'),
-                        ),
-                        SizedBox(
-                          height: 55,
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                            child: TextField(
-                              obscureText: false,
-                              controller: passwordController,
-                              decoration:  InputDecoration(
-                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                                hintText: 'Enter your username',
-                              ),
-                            ),
-                          ),
-                        ),
+                        
                         Container(
                           padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
                           child: const Text('Email Address'),
@@ -122,24 +105,6 @@ class _RegisterState extends State<Register> {
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                 hintText: 'Enter Phone Number',
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
-                          child: const Text('Account Type'),
-                        ),
-                        SizedBox(
-                          height: 55,
-                          child: Container(
-                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                            child: TextField(
-                              obscureText: false,
-                              controller: passwordController,
-                              decoration:  InputDecoration(
-                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                                hintText: 'Account Type',
                               ),
                             ),
                           ),
