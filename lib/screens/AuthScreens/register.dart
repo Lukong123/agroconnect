@@ -26,7 +26,7 @@ class _RegisterState extends State<Register> {
               color: Colors.white,
               child: Row(
                 children: [
-            SizedBox(height:10),
+            SizedBox(height:100),
 
             Padding(
               padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
@@ -70,6 +70,8 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 20,),
+
 
                         
                         Container(
@@ -90,6 +92,8 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 20,),
+
 
                         Container(
                           padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
@@ -128,6 +132,8 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 20,),
+
 
                          Container(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -154,7 +160,7 @@ class _RegisterState extends State<Register> {
                             width: 40,
                             // padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                             child: ElevatedButton(
-                              child: const Text('Register',
+                              child: const Text('Create Account',
                               style: TextStyle(
                                 fontSize: 17,
                               ),),
@@ -168,19 +174,19 @@ class _RegisterState extends State<Register> {
                               ),
                             )
                         ),
-                        SizedBox(height: 20,),
+                        SizedBox(height: 80,),
                         
             Padding(
-              padding: EdgeInsets.fromLTRB(50, 5, 10, 5),
+              padding: EdgeInsets.fromLTRB(75, 5, 0, 5),
               child: Row(
                 children: [
                   Text("Already have an account?",
-                  style: TextStyle(fontSize: 12.0),),
+                  style: TextStyle(fontSize: 15.0),),
                    SizedBox(width: 8), 
                                     //SizedBox
                                     Text('Login',
                                     style: TextStyle(color: primaryColor,
-                                    fontSize: 12.0, 
+                                    fontSize: 15.0, 
                                     ))
                 ],
               ),
