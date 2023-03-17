@@ -1,18 +1,16 @@
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
-// import 'Styles/colors.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
  
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
  
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool checkvalue = false;
@@ -24,16 +22,15 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 100,),
             Container(
               color: Colors.white,
               child: Row(
                 children: [
-            SizedBox(height:50),
+            SizedBox(height:100),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(15, 60, 5, 5),
-              child: Text("Login",
+              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+              child: Text("Create Account",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -56,6 +53,28 @@ class _LoginState extends State<Login> {
                     child: ListView(
                       children: <Widget>[
                         Container(
+                          padding: const EdgeInsets.fromLTRB(10, 1, 10, 5),
+                          child: const Text('Full Name'),
+                        ),
+                        SizedBox(
+                          height: 55,
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
+                            child: TextField(
+                              obscureText: false,
+                              controller: passwordController,
+                              decoration:  InputDecoration(
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                                hintText: 'Enter your full name',
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20,),
+
+
+                        
+                        Container(
                           padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
                           child: const Text('Email Address'),
                         ),
@@ -73,7 +92,27 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-          
+                        SizedBox(height: 20,),
+
+
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
+                          child: const Text('Phone Number'),
+                        ),
+                        SizedBox(
+                          height: 55,
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                            child: TextField(
+                              obscureText: false,
+                              controller: passwordController,
+                              decoration:  InputDecoration(
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                                hintText: 'Enter Phone Number',
+                              ),
+                            ),
+                          ),
+                        ),
                         SizedBox(height: 20,),
                         Container(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -94,44 +133,34 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         SizedBox(height: 20,),
-                        Row(
-                                children: <Widget>[
-                                  SizedBox(
-                                    
-                                    width: 1,
-                                  ),
-                                   Checkbox(
-                                    value: this.checkvalue,
-          
-                                    activeColor: primaryColor,
-                                    onChanged: (bool? value) {
-                                      setState(() {
-                                        this.checkvalue = value!;
-                                      });
-                                    },
-                                  ),
-                                  //SizedBox
-                                  Text(
-                                    'keep me signed In',
-                                    style: TextStyle(fontSize: 12.0),
-                                  ), //Text
-                                  SizedBox(width: 100), 
-                                  //SizedBox
-                                  Text('Forgot Password?',
-                                  style: TextStyle(color: primaryColor,
-                                  fontSize: 12.0, 
-                                  ))
-                                ], //<Widget>[]
+
+
+                         Container(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                          child: const Text('Confirm Password'),
+                        ),
+                        SizedBox(
+                          height: 55,
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                            child: TextField(
+                              obscureText: true,
+                              controller: passwordController,
+                              decoration:  InputDecoration(
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                                hintText: 'Confirm password',
                               ),
-                        SizedBox(height: 20,),
-                        
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20,),                        
           
             SizedBox(
                             height: 40,
                             width: 40,
                             // padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                             child: ElevatedButton(
-                              child: const Text('Login',
+                              child: const Text('Create Account',
                               style: TextStyle(
                                 fontSize: 17,
                               ),),
@@ -145,19 +174,19 @@ class _LoginState extends State<Login> {
                               ),
                             )
                         ),
-                        SizedBox(height: 200,),
+                        SizedBox(height: 80,),
                         
             Padding(
-              padding: EdgeInsets.fromLTRB(50, 5, 10, 5),
+              padding: EdgeInsets.fromLTRB(75, 5, 0, 5),
               child: Row(
                 children: [
-                  Text("Don't yet have an account?",
-                  style: TextStyle(fontSize: 12.0),),
+                  Text("Already have an account?",
+                  style: TextStyle(fontSize: 15.0),),
                    SizedBox(width: 8), 
                                     //SizedBox
-                                    Text('Create an Account',
+                                    Text('Login',
                                     style: TextStyle(color: primaryColor,
-                                    fontSize: 12.0, 
+                                    fontSize: 15.0, 
                                     ))
                 ],
               ),
