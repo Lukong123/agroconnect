@@ -2,13 +2,23 @@
 import 'package:flutter/material.dart';
 import 'package:agroconnect/custom/SearchBox.dart';
 import 'package:agroconnect/custom/borderBox.dart';
+import 'package:agroconnect/Widgets/bottombar.dart';
 
-class Order extends StatelessWidget {
+class Order extends StatefulWidget {
   const Order({Key? key}) : super(key: key);
 
   @override
+  State<Order> createState() => _OrderState();
+}
+
+class _OrderState extends State<Order> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: Mybotombar(
+          index: 2,
+          onTap: (index)=>{},
+        ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
@@ -53,7 +63,7 @@ class Order extends StatelessWidget {
                   children: [
                  ClipRRect(
                    borderRadius: BorderRadius.circular(15),
-                   child: Image.asset('assets/food.png'),
+                   child: Image.asset('assets/tool.png'),
                  ),
                    SizedBox(height: 20,),
                     Padding(
@@ -96,19 +106,19 @@ class Order extends StatelessWidget {
                         ],
                       ),
                     ),
-                    BorderBox(
-                      width: 200,
+                    TextButton(
+                      onPressed: ()=>{},
+                      child: const BorderBox(
+                        width: 200,
                         height: 55,
-                        child: TextButton(
-                          onPressed: ()=>{},
-                          child: const Text('Place Order',
+                        child: Text('Place Order',
                           style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16
                           ),
-                          ),
-                        )
+                        ),
+                      ),
                     )
                   ],
                 ),
