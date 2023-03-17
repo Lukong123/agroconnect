@@ -14,7 +14,7 @@ class BorderBox extends StatelessWidget {
       width: width,
       height: height,
       decoration:  BoxDecoration(
-        color: Colors.green[900],
+        color: Colors.grey,
         borderRadius:  BorderRadius.circular(15),
         border: Border.all(color: Colors.grey.withAlpha(40), width: 2),
       ),
