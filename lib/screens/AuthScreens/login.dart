@@ -11,11 +11,21 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
- 
+
 class _LoginState extends State<Login> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool checkvalue = false;
+
+  void login(String usernam, password){
+    try {
+      Response response = post(
+          Uri.parse("uri")
+      );
+    }catch{
+      print(e.toString())
+    }
+  }
  
   @override
   Widget build(BuildContext context) {
