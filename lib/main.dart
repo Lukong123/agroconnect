@@ -14,8 +14,9 @@ void main() {
       '/login': (context) => Login(),
       '/order': (context) => Order(),
       '/orderfood': (context) => OrderFood(),
-      '/': (context) => UploadFood(),
-      '/register': (context) => Register(),
+      '/upload': (context) => UploadFood(),
+      '/': (context) => Register(),
+      '/dashboard': (context) => Dashboard(),
 
     },
   ));

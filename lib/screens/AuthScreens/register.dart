@@ -2,6 +2,7 @@ import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -13,7 +14,43 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController confirmController = TextEditingController();
+  TextEditingController locationController = TextEditingController();
   bool checkvalue = false;
+  var message = "";
+
+
+
+  void register(String name,String email, String location, String phone, password, confirm) async{
+
+    if(password == confirm){
+      try{
+        Response response = await post(
+          Uri.parse("https://farmtome.herokuapp.com/api/v1/auth/register"),
+          body: {
+            'name': name,
+            'phone': phone,
+            'email': email,
+            'password': password,
+            'location': location,
+          }
+        );
+        if(response.statusCode==200){
+          print("posted");
+        }else{
+          print("failed");
+        }
+
+      }catch(e){
+        print(e.toString());
+      }
+
+    }else{
+     print("Password Mismatched");
+    }
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -62,7 +99,7 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
                             child: TextField(
                               obscureText: false,
-                              controller: passwordController,
+                              controller: nameController,
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                 hintText: 'Enter your full name',
@@ -84,10 +121,30 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                             child: TextField(
                               obscureText: false,
-                              controller: passwordController,
+                              controller: emailController,
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                 hintText: 'Enter email address',
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20,),
+
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(10, 1, 10, 0),
+                          child: const Text('location'),
+                        ),
+                        SizedBox(
+                          height: 55,
+                          child: Container(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                            child: TextField(
+                              obscureText: false,
+                              controller: locationController,
+                              decoration:  InputDecoration(
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                                hintText: 'Enter location',
                               ),
                             ),
                           ),
@@ -105,7 +162,7 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                             child: TextField(
                               obscureText: false,
-                              controller: passwordController,
+                              controller: phoneController,
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                 hintText: 'Enter Phone Number',
@@ -145,7 +202,7 @@ class _RegisterState extends State<Register> {
                             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                             child: TextField(
                               obscureText: true,
-                              controller: passwordController,
+                              controller: confirmController,
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                                 hintText: 'Confirm password',
@@ -164,7 +221,16 @@ class _RegisterState extends State<Register> {
                               style: TextStyle(
                                 fontSize: 17,
                               ),),
-                              onPressed: () {},
+                              onPressed: () {
+                                register(
+                                  nameController.text.toString(),
+                                  emailController.text.toString(),
+                                  locationController.text.toString(),
+                                  phoneController.text.toString(),
+                                  passwordController.text.toString(),
+                                  confirmController.text.toString(),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                 primary: primaryColor,
                                 shape: RoundedRectangleBorder(
@@ -174,7 +240,7 @@ class _RegisterState extends State<Register> {
                               ),
                             )
                         ),
-                        SizedBox(height: 80,),
+                        SizedBox(height: 40,),
                         
             Padding(
               padding: EdgeInsets.fromLTRB(75, 5, 0, 5),
