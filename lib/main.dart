@@ -11,11 +11,11 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
-      '/': (context) => Login(),
+      '/login': (context) => Login(),
       '/order': (context) => Order(),
       '/orderfood': (context) => OrderFood(),
       '/upload': (context) => UploadFood(),
-      '/register': (context) => Register(),
+      '/': (context) => Register(),
       '/dashboard': (context) => Dashboard(),
 
     },
