@@ -25,7 +25,7 @@ class _OrderListState extends State<OrderList> {
           color: white,
         ),
         title: Text(
-          "My Orders",
+          "Order List",
           textAlign: TextAlign.left,
           style:TextStyle(
             color: white,
@@ -63,7 +63,7 @@ class _OrderListState extends State<OrderList> {
         padding: EdgeInsetsDirectional.fromSTEB(6, 8, 6, 0),
         child: Container(
           width: double.infinity,
-          height: 80,
+          height: 50,
           decoration: BoxDecoration(
             color: lightgrey,
             boxShadow: [
@@ -78,63 +78,22 @@ class _OrderListState extends State<OrderList> {
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
             child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Hero(
-                  tag: 'ControllerImage',
-                  transitionOnUserGestures: true,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Icon(
-                      Icons.person_outline,
-                      color: primaryColor,
-                      size: 40,
-                    )
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
-                        child: Text(
-                                'Item: Flour', //cartItems[index].name,
-                          style:TextStyle(
-                                fontFamily: 'Poppins',
-                              ),
-                        ),
-                      ),
-                      
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                        child: Text(
-                          'Quanity: 20kg', //${cartItems[index].quantity}
-                        
-                        ),
-                      ),
-                      Icon(
-                         Icons.chevron_right, //ac_unit
-                         color: primaryColor,
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.delete_outline_rounded,
-                    color: Color(0xFFE86969),
-                    size: 20,
-                  ),
-                  onPressed: () {
-                  // Remove item
-                  },
-                ),
+
+                Icon(Icons.person_outline,
+                size: 30,),
+                SizedBox(width: 20,),
+                Text( 'Item: Flour',
+                 //cartItems[index].name,
+                 ),
+                SizedBox(width: 20,),
+                Text("Quantity: 55"),
+                SizedBox(width: 20,),
+                IconButton(onPressed: () {}, 
+                icon: Icon(Icons.chevron_right_outlined
+                )),
               ],
+                          
             ),
           ),
         ),
