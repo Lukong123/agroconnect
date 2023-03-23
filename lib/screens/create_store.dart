@@ -118,7 +118,7 @@ class _CreateStoreState extends State<CreateStore> {
                               controller: nameController,
                               decoration:  InputDecoration(
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                                hintText: 'Store Name',
+                                hintText: 'Enter Store Name',
                               ),
                             ),
                           ),
