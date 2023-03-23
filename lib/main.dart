@@ -1,3 +1,4 @@
+import 'package:agroconnect/Screens/create_store.dart';
 import 'package:agroconnect/Screens/dashboard/dashboard.dart';
 import 'package:agroconnect/Screens/order_list.dart';
 import 'package:flutter/material.dart';
@@ -6,22 +7,20 @@ import 'package:agroconnect/Screens/AuthScreens/register.dart';
 import 'package:agroconnect/Screens/myorders.dart';
 
 
-  void main() => runApp(const MyApp());
- 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
- 
- 
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: '/',
+    routes: {
+      '/login': (context) => Login(),
+      '/order': (context) => Order(),
+      '/orderfood': (context) => OrderFood(),
+      '/upload': (context) => UploadFood(),
+      '/': (context) => Register(),
+      '/dashboard': (context) => Dashboard(),
 
 
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: MyOrders(),
-      ),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+    },
+  ));
 }
