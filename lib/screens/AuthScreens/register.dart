@@ -1,3 +1,4 @@
+import 'package:agroconnect/Screens/AuthScreens/login.dart';
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:agroconnect/Styles/colors.dart';
@@ -250,10 +251,17 @@ class _RegisterState extends State<Register> {
                   style: TextStyle(fontSize: 15.0),),
                    SizedBox(width: 8), 
                                     //SizedBox
-                                    Text('Login',
-                                    style: TextStyle(color: primaryColor,
-                                    fontSize: 15.0, 
-                                    ))
+                                    InkWell(
+                                      child: Text('Login',
+                                      style: TextStyle(color: primaryColor,
+                                      fontSize: 15.0, 
+                                      )),
+                                      onTap: () {
+                                        Navigator.push(context,
+                                         MaterialPageRoute(builder: (context) => const Login())
+                                         );
+                                      } ,
+                                    )
                 ],
               ),
             )
