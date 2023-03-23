@@ -1,3 +1,4 @@
+import 'package:agroconnect/Screens/create_store.dart';
 import 'package:agroconnect/Screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:agroconnect/screens/AuthScreens/login.dart';
@@ -17,6 +18,7 @@ void main() {
       '/upload': (context) => UploadFood(),
       '/': (context) => Register(),
       '/dashboard': (context) => Dashboard(),
+
 
     },
   ));
