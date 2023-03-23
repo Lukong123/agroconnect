@@ -6,17 +6,17 @@ import 'package:agroconnect/Screens/AuthScreens/login.dart';
 import 'package:agroconnect/Screens/AuthScreens/register.dart';
 import 'package:agroconnect/Screens/myorders.dart';
 
-
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
-      '/login': (context) => Login(),
+      '/': (context) => Login(),
       '/order': (context) => Order(),
       '/orderfood': (context) => OrderFood(),
       '/upload': (context) => UploadFood(),
-      '/': (context) => Register(),
+      '/farm': (context) => Farm(),
+      '/register': (context) => Register(),
       '/dashboard': (context) => Dashboard(),
 
 
