@@ -4,6 +4,7 @@ import 'package:agroconnect/Screens/dashboard/homePage.dart';
 import 'package:agroconnect/Screens/dashboard/farm.dart';
 import 'package:agroconnect/Screens/dashboard/store.dart';
 import 'package:agroconnect/Screens/dashboard/profile.dart';
+import 'package:agroconnect/Screens/order_list.dart';
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:agroconnect/Widgets/bottombar.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ class _DashboardState extends State<Dashboard> {
     const Farm(),
     const Store(),
     const Profile(),
+    const OrderList(),
   ];
 
   final storage = FlutterSecureStorage();
