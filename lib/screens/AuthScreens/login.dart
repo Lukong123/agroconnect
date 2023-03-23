@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:agroconnect/Screens/AuthScreens/register.dart';
 import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
@@ -191,10 +192,17 @@ class _LoginState extends State<Login> {
                     style: TextStyle(fontSize: 12.0),),
                      SizedBox(width: 8), 
                                       //SizedBox
-                                      Text('Create an Account',
-                                      style: TextStyle(color: primaryColor,
-                                      fontSize: 12.0, 
-                                      ))
+                                      InkWell(
+                                        child: Text('Create an Account',
+                                        style: TextStyle(color: primaryColor,
+                                        fontSize: 12.0, 
+                                        )),
+                                          onTap: () {
+                                        Navigator.push(context,
+                                         MaterialPageRoute(builder: (context) => const Register())
+                                         );
+                                      } ,
+                                      )
                   ],
                 ),
               )
