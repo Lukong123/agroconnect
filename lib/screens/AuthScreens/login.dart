@@ -42,6 +42,7 @@ class _LoginState extends State<Login> {
 
         final token = data['token'];
         await storage.write(key: 'token', value: token);
+        Navigator.pushReplacementNamed(context, '/farm');
       }else{
         print("failed");
       }
