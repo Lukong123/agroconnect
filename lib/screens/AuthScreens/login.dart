@@ -8,10 +8,8 @@ import 'package:http/http.dart';
 import 'package:agroconnect/main.dart';
 
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-
-import 'package:flutter/material.dart';
-// import 'Styles/colors.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -24,6 +22,8 @@ class _LoginState extends State<Login> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool checkvalue = false;
+
+  final storage = FlutterSecureStorage();
 
 
 
@@ -38,10 +38,10 @@ class _LoginState extends State<Login> {
       );
       if(response.statusCode==200){
         var data = jsonDecode(response.body.toString());
-        print(data);
         print("account logged in successfully");
-        Navigator.pushReplacementNamed(context, '/dashboard',);
 
+        final token = data['token'];
+        await storage.write(key: 'token', value: token);
       }else{
         print("failed");
       }

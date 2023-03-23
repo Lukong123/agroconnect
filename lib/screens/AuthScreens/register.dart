@@ -4,6 +4,7 @@ import 'package:agroconnect/Styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
+
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
  
@@ -19,7 +20,6 @@ class _RegisterState extends State<Register> {
   TextEditingController confirmController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   bool checkvalue = false;
-  var message = "";
 
 
 
@@ -48,7 +48,20 @@ class _RegisterState extends State<Register> {
       }
 
     }else{
-     print("Password Mismatched");
+     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Padding(
+       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 100),
+       child: Text(
+         "password mismatched",
+       style: TextStyle(
+         fontWeight: FontWeight.bold,
+         fontSize: 16,
+         color: Colors.red
+       ),
+       ),
+     ),
+         backgroundColor: Colors.grey,
+     ));
+
     }
   }
  

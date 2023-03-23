@@ -5,6 +5,7 @@ import 'package:agroconnect/Screens/AuthScreens/register.dart';
 import 'package:agroconnect/screens/upload.dart';
 import 'package:agroconnect/screens/oder.dart';
 import 'package:agroconnect/screens/order_food.dart';
+import 'package:agroconnect/screens/dashboard/farm.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,7 +16,8 @@ void main() {
       '/order': (context) => Order(),
       '/orderfood': (context) => OrderFood(),
       '/upload': (context) => UploadFood(),
-      '/': (context) => Register(),
+      '/': (context) => Farm(),
+      '/register': (context) => Register(),
       '/dashboard': (context) => Dashboard(),
 
     },
